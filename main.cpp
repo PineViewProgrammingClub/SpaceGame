@@ -43,6 +43,7 @@ int main(int argc, char** args){
 					std::cout << "a was pressed" << std::endl;
 					break;
 				}
+				break;
 			case SDL_QUIT:
 				shouldExit = true;
 				break;

@@ -1,10 +1,10 @@
 Space Game To-Do List:
 (Yes, Proffitt, I have made a todo list)
 
-Stuff that shouldn't be too hard...
+-----[ Easy Stuff ]-----
 - Texture Loader
 
-For the future:
+-----[ For the Future ]-----
 - Space Ship Models
 - Currency & Economy
 - Maps? Coordinate System? Waypoints?
