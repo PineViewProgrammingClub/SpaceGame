@@ -24,7 +24,8 @@ int main(int argc, char** args){
 	GLenum err = glewInit();
 	if (err != GLEW_OK)
 	{
-		//error
+		// Glew error
+		std::cout << "GLEW Error" << std::endl;
 	}
 
 	glEnable(GL_BLEND);
