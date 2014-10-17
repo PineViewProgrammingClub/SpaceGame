@@ -2,6 +2,7 @@ Space Game To-Do List:
 (Yes, Proffitt, I have made a todo list)
 
 -----[ Easy Stuff ]-----
+- Abstract Rendering Method
 - Texture Loader
 
 -----[ For the Future ]-----
