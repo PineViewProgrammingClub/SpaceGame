@@ -7,6 +7,8 @@
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
+const int START_POS_X = 30;
+const int START_POS_Y = 30;
 const char* GAME_TITLE = "Space Game";
 const char* VERSION_STRING = "v0.0";
 
@@ -20,7 +22,7 @@ int main(int argc, char** args){
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
 
-	SDL_Window* window = SDL_CreateWindow(GAME_TITLE, 30, 30, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_OPENGL);
+	SDL_Window* window = SDL_CreateWindow(GAME_TITLE, START_POS_X, START_POS_Y, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_OPENGL);
 
 	SDL_GLContext context = SDL_GL_CreateContext(window);
 	SDL_GL_MakeCurrent(window, context);
