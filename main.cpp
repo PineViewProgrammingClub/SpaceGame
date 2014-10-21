@@ -5,6 +5,11 @@
 
 #define main main
 
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
+const char* GAME_TITLE = "Space Game";
+const char* VERSION_STRING = "v0.0";
+
 int main(int argc, char** args){
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
 	{
@@ -15,7 +20,7 @@ int main(int argc, char** args){
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
 	SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
 
-	SDL_Window* window = SDL_CreateWindow("Space Game", 30, 30, 800, 600, SDL_WINDOW_OPENGL);
+	SDL_Window* window = SDL_CreateWindow(GAME_TITLE, 30, 30, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_OPENGL);
 
 	SDL_GLContext context = SDL_GL_CreateContext(window);
 	SDL_GL_MakeCurrent(window, context);
