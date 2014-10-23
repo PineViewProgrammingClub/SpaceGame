@@ -1,5 +1,5 @@
-// "Vector.h" - Tristan
-// A simple vector that stores the x and y coordinates of stuff in stuff
+//	"Vector.h" - Tristan
+//	A simple vector that stores the x and y coordinates of stuff in stuff
 
 #ifndef VECTOR_H
 #define VECTOR_H

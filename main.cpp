@@ -1,3 +1,8 @@
+//	main.cpp
+//	Quite simply, the most important one.
+//	
+//	Important Revision History (Can we at least try to keep it current...ish?)
+
 #include <SDL.h>
 #include <GL\glew.h>
 #include <GL\GL.h>
