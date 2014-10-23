@@ -1,7 +1,12 @@
-//	main.cpp
-//	Quite simply, the most important one.
-//	
-//	Important Revision History (Can we at least try to keep it current...ish?)
+/******************************************************************************
+*   main.cpp
+*
+*	Quite simply, it handles just about everything. 
+*
+*	Important Revision History:
+*	23/10/14 - Added this comment. 
+*
+******************************************************************************/
 
 #include <SDL.h>
 #include <GL\glew.h>

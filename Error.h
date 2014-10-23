@@ -1,3 +1,11 @@
+/******************************************************************************
+*   Error.h - Tristan Lee
+*
+*	Handles errors when they occur with a specific error code. It will be 
+*	changed to a hex system, when Space Calerb gets the time.
+*
+******************************************************************************/
+
 #ifndef ERROR_H
 #define ERROR_H
 
