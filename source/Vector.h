@@ -1,11 +1,3 @@
-/******************************************************************************
-*   Vector.h - Tristan Lee
-*
-*	Holds an 'X' and 'Y' coordinate in the form of a double, which can be 
-*	changed later, if needed.
-*
-******************************************************************************/
-
 #ifndef VECTOR_H
 #define VECTOR_H
 

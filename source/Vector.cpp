@@ -1,11 +1,3 @@
-/******************************************************************************
-*	Vector.cpp - Tristan Lee
-*
-*	Holds an 'X' and 'Y' coordinate in the form of a double, which can be 
-*	changed later, if needed.
-*
-******************************************************************************/
-
 #include "Vector.h"
 #include <iostream>
 
