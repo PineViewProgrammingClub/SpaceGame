@@ -13,14 +13,13 @@
 #include <GL\GL.h>
 #include <iostream>
 
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 600
+#define START_POS_X 30
+#define START_POS_Y 30
+#define GAME_TITLE "Space Game"
+#define VERSION_STRING "v0.0"
 #define main main
-
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
-const int START_POS_X = 30;
-const int START_POS_Y = 30;
-const char* GAME_TITLE = "Space Game";
-const char* VERSION_STRING = "v0.0";
 
 int main(int argc, char** args){
 	if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
