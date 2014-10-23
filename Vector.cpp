@@ -1,8 +1,8 @@
 // "Vector.cpp" - Tristan
 // A simple vector that stores the x and y coordinates of stuff in stuff
 
-#include <iostream>
 #include "Vector.h"
+#include <iostream>
 
 Vector::Vector(double nx, double ny) {
 	x = nx;
