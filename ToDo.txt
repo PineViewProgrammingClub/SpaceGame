@@ -1,5 +1,4 @@
 Space Game To-Do List:
-(Yes, Proffitt, I have made a todo list)
 
 -----[ Easy Stuff ]-----
 - Abstract Rendering Method
@@ -10,3 +9,21 @@ Space Game To-Do List:
 - Currency & Economy
 - Maps? Coordinate System? Waypoints?
 - AI Ships?
+
+-----[ Space Calerb ]-----
+
+
+-----[ Caleb #2 ]-----
+
+
+-----[ Tristan ]-----
+
+
+-----[ Zach ]-----
+
+
+-----[ Amanda ]-----
+- Player Ship
+- 2 or 3 other types of enemy/police ships
+- Bullets
+- 3 star backgrounds
