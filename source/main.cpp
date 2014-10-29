@@ -48,7 +48,7 @@ int main(int argc, char** args){
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
-
+	
 	SDL_Event event;
 	bool shouldExit = false;
 	while (!shouldExit){
