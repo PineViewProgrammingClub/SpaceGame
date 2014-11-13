@@ -12,6 +12,7 @@
 #include <GL\glew.h>
 #include <GL\GL.h>
 #include <iostream>
+#include "Vector.h"
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
@@ -48,6 +49,23 @@ int main(int argc, char** args){
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
+
+	GLuint VAO,VBO,IBO;
+	glGenVertexArrays(1, &VAO);
+	glBindVertexArray(VAO);
+	glGenBuffers(1, &VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+	float verts[12] = { -1, 1, 0, 1, -1, -1, 0, 1, 1, -1, 0, 1 };
+	int vertOffset = 0;
+	glBufferData(GL_ARRAY_BUFFER, 12, &verts[0], GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4, (GLvoid*) vertOffset);
+	glEnableVertexAttribArray(0);
+
+	unsigned int indices[3] = {0, 1, 2};
+	glGenBuffers(1, &IBO);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3, &indices[0], GL_STATIC_DRAW);
 	
 	SDL_Event event;
 	bool shouldExit = false;
@@ -73,7 +91,11 @@ int main(int argc, char** args){
 				break;
 			}
 		}
-		//other stuff
+		// Update
+		// draw
+		SDL_GL_MakeCurrent(window, context);
+		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+		SDL_GL_SwapWindow(window);
 	}
 
 
