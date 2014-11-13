@@ -10,7 +10,7 @@ Shader* loadShader(std::string fileName){
 	std::cout << "Loading shader: " << fileName << "..." << std::endl;
 	std::string line;
 	std::string vertString;
-	std::ifstream vertFile(fileName);
+	std::ifstream vertFile(fileName + ".vert");
 	std::cout << "\tLoading vertex shader...\t";
 	if (vertFile.is_open())
 	{
@@ -25,7 +25,7 @@ Shader* loadShader(std::string fileName){
 		std::cout << "Unable to open vert file";
 	}
 	std::string fragString;
-	std::ifstream fragFile(fileName);
+	std::ifstream fragFile(fileName + ".frag");
 	std::cout << "\tLoading fragment shader...\t";
 	if (fragFile.is_open())
 	{

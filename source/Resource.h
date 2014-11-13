@@ -1,5 +1,5 @@
-#ifndef RESOURCEMANAGER_H
-#define RESOURCEMANAGER_H
+#ifndef RESOURCE_H
+#define RESOURCE_H
 
 #include "Shader.h"
 #include "Texture.h"
@@ -7,9 +7,7 @@
 #include <string>
 #include <vector>
 
-class ResourceManager {
-private:
-	Shader* loadShader(std::string);
-};
+
+Shader* loadShader(std::string);
 
 #endif

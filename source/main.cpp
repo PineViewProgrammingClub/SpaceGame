@@ -12,6 +12,7 @@
 #include <GL\glew.h>
 #include <GL\GL.h>
 #include <iostream>
+#include "Resource.h"
 #include "Vector.h"
 
 #define SCREEN_WIDTH 800
@@ -66,6 +67,8 @@ int main(int argc, char** args){
 	glGenBuffers(1, &IBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3, &indices[0], GL_STATIC_DRAW);
+	Shader* shader = loadShader("default");
+	shader->bind();
 	
 	SDL_Event event;
 	bool shouldExit = false;
