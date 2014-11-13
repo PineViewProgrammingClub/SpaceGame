@@ -1,10 +1,16 @@
+#define _CRT_SECURE_NO_DEPRECATE
+#include "Resource.h"
+#include "lodepng.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
 
-void Resource::loadShader(std::string fileName){
+Shader* loadShader(std::string fileName){
 	std::cout << "Loading shader: " << fileName << "..." << std::endl;
 	std::string line;
 	std::string vertString;
-	std::ifstream vertFile(globalPrefix + shaderPrefix + fileName + vertSuffix + shaderSuffix);
+	std::ifstream vertFile(fileName);
 	std::cout << "\tLoading vertex shader...\t";
 	if (vertFile.is_open())
 	{
@@ -19,7 +25,7 @@ void Resource::loadShader(std::string fileName){
 		std::cout << "Unable to open vert file";
 	}
 	std::string fragString;
-	std::ifstream fragFile(globalPrefix + shaderPrefix + fileName + fragSuffix + shaderSuffix);
+	std::ifstream fragFile(fileName);
 	std::cout << "\tLoading fragment shader...\t";
 	if (fragFile.is_open())
 	{
@@ -34,6 +40,5 @@ void Resource::loadShader(std::string fileName){
 		std::cout << "Unable to open frag file";
 	}
 	std::cout << "Done." << std::endl;
-	shaders[fileName] = new Shader(vertString.c_str(), fragString.c_str());
-	shaderNames.push_back(fileName);
+	return new Shader(vertString.c_str(), fragString.c_str());
 }

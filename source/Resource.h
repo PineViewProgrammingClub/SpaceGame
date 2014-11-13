@@ -1,39 +1,15 @@
-void ResourceManager::loadShader(std::string fileName){
-		std::cout << "Loading shader: " << fileName << "..." << std::endl;
-		std::string line;
-		std::string vertString;
-		std::ifstream vertFile(globalPrefix + shaderPrefix + fileName + vertSuffix + shaderSuffix);
-		std::cout << "\tLoading vertex shader...\t";
-		if (vertFile.is_open())
-		{
-			while (getline(vertFile, line))
-			{
-				vertString.append(line);
-				vertString.append("\n");
-			}
-			vertFile.close();
-			std::cout << "Done." << std::endl;
-		} else {
-			std::cout << "Unable to open vert file";
-			handleError(Error::LOAD_FILE, true);
-		}
-		std::string fragString;
-		std::ifstream fragFile(globalPrefix + shaderPrefix + fileName + fragSuffix + shaderSuffix);
-		std::cout << "\tLoading fragment shader...\t";
-		if (fragFile.is_open())
-		{
-			while (getline(fragFile, line))
-			{
-				fragString.append(line);
-				fragString.append("\n");
-			}
-			fragFile.close();
-			std::cout << "Done." << std::endl;
-		} else {
-			std::cout << "Unable to open frag file";
-			handleError(Error::LOAD_FILE, true);
-		}
-		std::cout << "Done." << std::endl;
-		shaders[fileName] = new Shader(vertString.c_str(), fragString.c_str());
-		shaderNames.push_back(fileName);
-	}
+#ifndef RESOURCEMANAGER_H
+#define RESOURCEMANAGER_H
+
+#include "Shader.h"
+#include "Texture.h"
+#include <unordered_map>
+#include <string>
+#include <vector>
+
+class ResourceManager {
+private:
+	Shader* loadShader(std::string);
+};
+
+#endif
