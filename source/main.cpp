@@ -59,16 +59,15 @@ int main(int argc, char** args){
 
 	float verts[12] = { -1, 1, 0, 1, -1, -1, 0, 1, 1, -1, 0, 1 };
 	int vertOffset = 0;
-	glBufferData(GL_ARRAY_BUFFER, 12, &verts[0], GL_STATIC_DRAW);
-	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4, (GLvoid*) vertOffset);
+	glBufferData(GL_ARRAY_BUFFER, 48, &verts[0], GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 16, (GLvoid*) vertOffset);
 	glEnableVertexAttribArray(0);
 
 	unsigned int indices[3] = {0, 1, 2};
 	glGenBuffers(1, &IBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3, &indices[0], GL_STATIC_DRAW);
-	Shader* shader = loadShader("default");
-	shader->bind();
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 12, &indices[0], GL_STATIC_DRAW);
+	Shader* shader = loadShader("res/shader/default");
 	
 	SDL_Event event;
 	bool shouldExit = false;
@@ -97,8 +96,14 @@ int main(int argc, char** args){
 		// Update
 		// draw
 		SDL_GL_MakeCurrent(window, context);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		shader->bind();
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 		SDL_GL_SwapWindow(window);
+		GLenum glError = glGetError();
+		if(glError != GL_NO_ERROR) {
+			std::cout << gluErrorString(glError) << std::endl;
+		}
 	}
 
 
